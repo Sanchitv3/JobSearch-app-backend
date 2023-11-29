@@ -9,11 +9,15 @@ const Job = require("./models/Jobs");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 
-mongoose.connect("mongodb://localhost:27017/beeproject");
+mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.json())
+const allowedOrigins = process.env.NODE_ENV === 'production'
+  ? ["https://jobsearch-dm9j.onrender.com"]
+  : ["http://localhost:3000/","https://jobsearch-dm9j.onrender.com"];
+
 app.use(cors({
-    origin: ["http://localhost:3000/","https://jobsearch-dm9j.onrender.com"],
+  origin: allowedOrigins,
 }));
 app.use(express.static('public'));
 
@@ -32,8 +36,7 @@ mongoose.connection.once('open', () => {
     });
 });
 
-
-const secretKey = '123';
+const secretKey = process.env.SECRET_KEY || '123';
 
 const verifyToken = (req, res, next) => {
     const token = req.headers.authorization;
