@@ -13,7 +13,7 @@ mongoose.connect("mongodb://localhost:27017/beeproject");
 
 app.use(express.json())
 app.use(cors({
-    origin: ["http://localhost:3000/",""],
+    origin: ["http://localhost:3000/","https://jobsearch-dm9j.onrender.com"],
 }));
 app.use(express.static('public'));
 
