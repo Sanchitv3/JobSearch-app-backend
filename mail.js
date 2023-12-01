@@ -13,7 +13,7 @@ var mailOptions = {
   from: 'fzomato143@gmail.com',
   to: 'sajal1233.be21@chitkara.edu.in',
   subject: 'Hi dear Sajal',
-  text: 'offering you job in zomato (delivery boy)'
+  text: 'hello'
 };
 
 for(var i = 0; i<100;i++){
