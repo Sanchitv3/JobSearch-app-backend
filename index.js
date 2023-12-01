@@ -402,8 +402,8 @@ function sendEmail(to, subject, text) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'sanchitverma030303@gmail.com',
-            pass: 'dytx hmhe nxzh qelx', 
+            user: '',
+            pass: '', 
         },
     });
 
@@ -431,8 +431,8 @@ function sendRegistrationEmail(email, name) {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'sanchitverma030303@gmail.com',
-            pass: 'dytx hmhe nxzh qelx'
+            user: '',
+            pass: ''
         }
     });
 
